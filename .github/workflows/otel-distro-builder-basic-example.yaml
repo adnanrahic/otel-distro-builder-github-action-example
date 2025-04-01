@@ -1,0 +1,38 @@
+name: OpenTelemetry Distribution Build
+
+on:
+  push:
+    tags:
+      - "v*" # Runs when a version tag is pushed (e.g., v1.0.0)
+  workflow_dispatch: # Enables manual triggering from the GitHub UI
+
+permissions:
+  contents: write # This is required for creating/modifying releases
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository code
+      - uses: actions/checkout@v4
+
+      # Build the OpenTelemetry distribution using our custom action
+      - uses: observiq/otel-distro-builder@v1
+        with:
+          manifest: "./manifest.yaml"
+
+      # (Optional) Upload build artifacts to GitHub Actions for debugging and verification
+      # These artifacts are available for download in the GitHub Actions UI
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: distribution-artifacts
+          path: ${{ github.workspace }}/artifacts
+          retention-days: 5 # Artifacts are kept for 5 days then automatically deleted
+
+      # Create a GitHub Release and attach the build artifacts
+      # This makes the artifacts available for download from the Releases page
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ github.workspace }}/artifacts/*
