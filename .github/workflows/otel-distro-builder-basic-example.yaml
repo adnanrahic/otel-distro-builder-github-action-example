@@ -20,6 +20,7 @@ jobs:
       - uses: observiq/otel-distro-builder@v1
         with:
           manifest: "./manifest.yaml"
+          platforms: "linux/amd64,linux/arm64"
 
       # (Optional) Upload build artifacts to GitHub Actions for debugging and verification
       # These artifacts are available for download in the GitHub Actions UI
