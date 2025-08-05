@@ -1,0 +1,18 @@
+apiVersion: bindplane.observiq.com/v1
+kind: AgentType
+metadata:
+    name: otel-distro-builder-demo
+    displayName: OpenTelemetry Distro Builder Demo
+    description: A custom built OpenTelemetry Collector for demo purposes.
+spec:
+    description: ""
+    repositoryLink: https://github.com/adnanrahic/otel-distro-builder-github-action-example
+    platformArchSet:
+        - platform: darwin
+          arch: arm64
+        - platform: linux
+          arch: amd64
+        - platform: linux
+          arch: arm64
+        - platform: windows
+          arch: amd64
