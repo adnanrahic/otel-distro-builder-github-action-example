@@ -1,6 +1,6 @@
 dist:
   module: github.com/adnanrahic/opentelemetry-distro-builder-demo
-  name: opentelemetry-distro-builder-demo
+  name: odb-demo
   description: OpenTelemetry Collector built with Bindplane components for demo purposes.
   output_path: ./_build
   version: v1.0.9

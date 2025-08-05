@@ -1,7 +1,7 @@
 apiVersion: bindplane.observiq.com/v1
 kind: AgentType
 metadata:
-    name: opentelemetry-distro-builder-demo
+    name: odb-demo
     displayName: OpenTelemetry Distro Builder Demo (Adnan's fork)
     description: A custom built OpenTelemetry Collector for demo purposes. (Adnan's fork)
 spec:
