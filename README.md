@@ -11,3 +11,21 @@ The project includes:
 The workflow automatically builds the collector for Linux (amd64/arm64), macOS (arm64), and Windows (amd64) platforms when a version tag is pushed. It creates platform-specific packages (DEB, RPM, APK, ZIP, TAR.GZ) and publishes them as GitHub releases.
 
 This serves as a template for creating your own custom OpenTelemetry Collector distribution with automated multi-platform builds.
+
+## Step-by-step
+
+Add the custom collector resource to Bindplane.
+
+```bash
+bindplane apply ./bindplane/custom-collector-resource.yaml
+bindplane get agent-type
+
+[output]
+opentelemetry-distro-builder-demo	OpenTelemetry Distro Builder Demo (Adnan's fork)	           	https://github.com/adnanrahic/otel-distro-builder-github-action-example	
+```
+
+Sync the built collection versions to Bindplane.
+
+```bash
+bindplane sync agent-version --agent-type opentelemetry-distro-builder-demo --all
+```

@@ -1,9 +1,9 @@
 dist:
-  module: github.com/bindplane/otel-distro-builder-demo
-  name: otel-distro-builder-demo
+  module: github.com/adnanrahic/opentelemetry-distro-builder-demo
+  name: opentelemetry-distro-builder-demo
   description: OpenTelemetry Collector built with Bindplane components for demo purposes.
   output_path: ./_build
-  version: v1.0.8
+  version: v1.0.9
 conf_resolver:
   default_uri_scheme: "env"
 receivers:
