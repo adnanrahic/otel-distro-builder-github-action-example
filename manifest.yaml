@@ -3,7 +3,7 @@ dist:
   name: odb-demo
   description: OpenTelemetry Collector built with Bindplane components for demo purposes.
   output_path: ./_build
-  version: v1.0.9
+  version: v1.0.10
 conf_resolver:
   default_uri_scheme: "env"
 receivers:
